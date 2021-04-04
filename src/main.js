@@ -2,12 +2,12 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import { Catalog } from './course-catalog.js';
+import { Catalog } from './js/course-catalog.js';
 
 function displayClasses(coursesPicked) {
   for (let i = 0; i <= 11; i++) {
-    if (coursesPicked === Catalog["courses"][i]["course-title"]) {
-      return Catalog["courses"][i];
+    if (coursesPicked === Catalog.courses[i].courseTitle) {
+      return Catalog.courses[i];
     }
   }
 }
