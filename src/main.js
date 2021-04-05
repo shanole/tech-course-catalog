@@ -4,12 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import { Catalog } from './js/course-catalog.js';
 
-function displayClasses(coursesPicked) {
-  for (let i = 0; i <= 11; i++) {
-    if (coursesPicked === Catalog.courses[i].courseTitle) {
-      return Catalog.courses[i];
+function findCourse(title) {
+  Catalog.courses.forEach(function(course) {
+    if (course.courseTitle === title) {
+      console.log(course);
+      return course;
     }
-  }
+  })
 }
 
 $(document).ready(function() {
@@ -20,6 +21,6 @@ $(document).ready(function() {
 
     const coursePicked = $("input:radio[name=courses]:checked").val();
     $("#results").show();
-    $(".coursesPicked").text(JSON.stringify(displayClasses(coursePicked)));
+    $(".coursesPicked").text(JSON.stringify(findCourse(coursePicked)));
   });
 });
