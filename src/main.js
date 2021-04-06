@@ -26,6 +26,6 @@ $("#submitcourse").click(function(event) {
 //code to be used when it's time to get data back out of local storage
 const classesRetrieved = localStorage.getItem("classesPickedString").split(",");
 const nameRetrieved = localStorage.getItem("name");
-console.log(localStorage.getItem("name"));
+console.log(localStorage.getItem(nameRetrieved));
 // console.log(localStorage.getItem("classesPickedString"));
 console.log(classesRetrieved);
