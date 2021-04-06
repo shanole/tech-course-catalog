@@ -2,15 +2,16 @@ import { GoogleCalendar, ICalendar, OutlookCalendar } from 'datebook';
 import { Catalog } from './course-catalog.js';
 
 function findCourse(title) {
+  let selectedCourse;
   Catalog.courses.forEach(function(course) {
     if (course.courseTitle === title) {
-      console.log(course);
-      return course;
+      selectedCourse = course;
     }
-  })
+  });
+  return selectedCourse;
 }
 
-function makeEventLink(courseTitle, calendarType) {
+export function makeEventLink(courseTitle, calendarType) {
   let course = findCourse(courseTitle);
   let calendarEvent;
   let courseEvent = {
@@ -24,7 +25,7 @@ function makeEventLink(courseTitle, calendarType) {
       end: new Date(course.endDate),
       weekdays: course.meetingDays,
     }
-  }
+  };
   if (calendarType === "Google") {
     let googleEvent = new GoogleCalendar(courseEvent);
     calendarEvent = googleEvent.render();
