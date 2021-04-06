@@ -12,27 +12,27 @@ import './css/styles.css';
 //   }
 // }
 
-$(document).ready(function() {
-  $("#submitcourse").click(function(event) {
-    event.preventDefault();
-    $("#catalog").hide();
-    $("#submit").hide();
+$("#submitcourse").click(function(event) {
+  event.preventDefault();
+  $("#catalog").hide();
+  $("#submit").hide();
 
-    const name = $("input#name").val();
-    let careerPicked = $("input:radio[name=career]:checked").val();
-    let electivePicked = $("input:radio[name=elective]:checked").val();
-    let langsPicked = [];
-    $("input:checkbox[name=language]:checked").each(function() {
-      const pickLang = $(this).val();
-      langsPicked.push(pickLang);
-    });
-
-    console.log(name);
-    console.log(careerPicked);
-    console.log(electivePicked);
-    console.log(langsPicked);
-
-    $("#results").show();
-    //$(".coursesPicked").text(JSON.stringify(displayClasses(coursePicked)));
+  const name = $("input#name").val();
+  let careerPicked = $("input:radio[name=career]:checked").val();
+  let electivePicked = [];
+  $("input:checkbox[name=elective]:checked").each(function() {
+    const electPick = $(this).val();
+    electivePicked.push(electPick);
   });
+  let langsPicked = [];
+  $("input:checkbox[name=language]:checked").each(function() {
+    const pickLang = $(this).val();
+    langsPicked.push(pickLang);
+  });
+  
+  console.log(name);
+  console.log(careerPicked);
+  console.log(electivePicked);
+  console.log(langsPicked);
+    //$(".coursesPicked").text(JSON.stringify(displayClasses(coursePicked)));
 });
