@@ -3,7 +3,6 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
-<<<<<<< HEAD
 $("#submitcourse").click(function(event) {
   event.preventDefault();
   $("#catalog").hide();
@@ -20,7 +19,5 @@ $("#submitcourse").click(function(event) {
   $("input:checkbox[name=language]:checked").each(function() {
     const pickLang = $(this).val();
     langsPicked.push(pickLang);
-=======
->>>>>>> event-object
   });
 });
