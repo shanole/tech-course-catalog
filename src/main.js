@@ -2,24 +2,22 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import { Catalog } from './js/course-catalog.js';
 
-function displayClasses(coursesPicked) {
-  for (let i = 0; i <= 11; i++) {
-    if (coursesPicked === Catalog.courses[i].courseTitle) {
-      return Catalog.courses[i];
-    }
-  }
-}
+$("#submitcourse").click(function(event) {
+  event.preventDefault();
+  $("#catalog").hide();
+  $("#submit").hide();
 
-$(document).ready(function() {
-  $("#submitcourse").click(function(event) {
-    event.preventDefault();
-    $("#formOne").hide();
-    $("#submit").hide();
-
-    const coursePicked = $("input:radio[name=courses]:checked").val();
-    $("#results").show();
-    $(".coursesPicked").text(JSON.stringify(displayClasses(coursePicked)));
+  const name = $("input#name").val();
+  let careerPicked = $("input:radio[name=career]:checked").val();
+  let electivePicked = [];
+  $("input:checkbox[name=elective]:checked").each(function() {
+    const electPick = $(this).val();
+    electivePicked.push(electPick);
+  });
+  let langsPicked = [];
+  $("input:checkbox[name=language]:checked").each(function() {
+    const pickLang = $(this).val();
+    langsPicked.push(pickLang);
   });
 });
