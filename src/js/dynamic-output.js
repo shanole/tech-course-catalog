@@ -42,7 +42,7 @@ export function displayCourses() {
     <h3>Days: ${prettifyDays(currentCourse.meetingDays)}</h3>
     <h3>Time: ${currentCourse.startTime} - ${currentCourse.endTime}</h3>
     <h3>Location: ${currentCourse.location}</h3>
-    <p>${currentCourse.description}</p>
+    <h3>${currentCourse.description}</h3>
     <button type="button" class="btn-primary" onclick="window.open('${googleCalLink}', '_blank')"><img src="${googleIcon}"></button>
     <button type="button" class="btn-danger" onclick="window.open('${outlookCalLink}', '_blank')"><img src="${outlookIcon}"></button>
     <button type="button" class="btn-success" class="iCal" id="${index}"><img src="${iCalIcon}"></button>
