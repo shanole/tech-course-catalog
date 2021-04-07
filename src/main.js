@@ -2,7 +2,9 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+<<<<<<< HEAD
 import { displayCourses, iCalButtons } from './js/dynamic-output.js';
+>>>>>>> 6697df2e4e842ee78535a4c7b416ab9da8cac590
 
 $("#submitcourse").click(function(event) {
   event.preventDefault();
