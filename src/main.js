@@ -6,14 +6,13 @@ import { findCourse, makeEventLink } from './js/calendar-event.js';
 
 function displayCourses() {
   const coursesRetrieved = localStorage.getItem("coursesPickedString").split(",");
-  console.log("courses array from local storage: "+ coursesRetrieved);
   let confirmationDiv = $("div#confirmationDisplay");
   let htmlForCourseDisplay = "";
-  coursesRetrieved.forEach(function(course) {
-    let currentCourse = findCourse(course);
-    let googleCalLink = makeEventLink(course,"Google");
-    let iCalLink = makeEventLink(course,"iCalendar");
-    let outlookCalLink = makeEventLink(course, "Outlook");
+  for (let index = 1; index < coursesRetrieved.length; index ++) {
+    let currentCourse = findCourse(coursesRetrieved[index]);
+    let googleCalLink = makeEventLink(coursesRetrieved[index],"Google");
+    let iCalLink = makeEventLink(coursesRetrieved[index],"iCalendar");
+    let outlookCalLink = makeEventLink(coursesRetrieved[index], "Outlook");
     htmlForCourseDisplay += `<div>
     <h3>Course Name: ${currentCourse.courseTitle}</h3>
     <h3>Instructor: ${currentCourse.instructor}</h3>
@@ -26,7 +25,7 @@ function displayCourses() {
     <button type="button" class="btn-danger" href="${outlookCalLink}"><img src=assets/images/outlook_logo.png></button>
     <button type="button" class="btn-success" href="${iCalLink}"><img src=assets/images/iCal_icon.png></button>
     </div>`;
-  });
+  }
   confirmationDiv.html(htmlForCourseDisplay);
 }
 
