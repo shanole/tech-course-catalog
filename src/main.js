@@ -8,7 +8,7 @@ function displayCourses() {
   const coursesRetrieved = localStorage.getItem("coursesPickedString").split(",");
   let confirmationDiv = $("div#confirmationDisplay");
   let htmlForCourseDisplay = "";
-  for (let index = 1; index < coursesRetrieved.length; index ++) {
+  for (let index = 0; index < coursesRetrieved.length; index ++) {
     let currentCourse = findCourse(coursesRetrieved[index]);
     let googleCalLink = makeEventLink(coursesRetrieved[index],"Google");
     let iCalLink = makeEventLink(coursesRetrieved[index],"iCalendar");
