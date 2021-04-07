@@ -9,15 +9,23 @@ $("#submitcourse").click(function(event) {
   $("#submit").hide();
 
   const name = $("input#name").val();
-  let careerPicked = $("input:radio[name=career]:checked").val();
-  let electivePicked = [];
+  localStorage.setItem("name", name);
+  let classesPicked = [$("input:radio[name=career]:checked").val()];
   $("input:checkbox[name=elective]:checked").each(function() {
     const electPick = $(this).val();
-    electivePicked.push(electPick);
+    classesPicked.push(electPick);
   });
-  let langsPicked = [];
   $("input:checkbox[name=language]:checked").each(function() {
-    const pickLang = $(this).val();
-    langsPicked.push(pickLang);
+    const LangPick = $(this).val();
+    classesPicked.push(LangPick);
   });
+  const classesPickedString = classesPicked.toString();
+  console.log(classesPickedString);
+  localStorage.setItem("classesPickedString", classesPickedString);
 });
+//code to be used when it's time to get data back out of local storage
+const classesRetrieved = localStorage.getItem("classesPickedString").split(",");
+const nameRetrieved = localStorage.getItem("name");
+console.log(localStorage.getItem(nameRetrieved));
+// console.log(localStorage.getItem("classesPickedString"));
+console.log(classesRetrieved);
