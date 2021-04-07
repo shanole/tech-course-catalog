@@ -20,8 +20,8 @@ function displayCourses() {
     <h3>Time: ${currentCourse.startTime} - ${currentCourse.endTime}</h3>
     <h3>Location: ${currentCourse.location}</h3>
     <p>${currentCourse.description}</p>
-    <button type="button" class="btn-primary" href="${googleCalLink}"><img src=assets/images/Google_Calendar_icon.png></button>
-    <button type="button" class="btn-danger" href="${outlookCalLink}"><img src=assets/images/outlook_logo.png></button>
+    <button type="button" class="btn-primary" onclick="window.open('${googleCalLink}', '_blank')"><img src=assets/images/Google_Calendar_icon.png></button>
+    <button type="button" class="btn-danger" onclick="window.open('${outlookCalLink}', '_blank')"><img src=assets/images/outlook_logo.png></button>
     <button type="button" class="btn-success" class="iCal" id="${index}" "><img src=assets/images/iCal_icon.png></button>
     </div>`;
   }
