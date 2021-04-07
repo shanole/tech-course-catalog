@@ -6,7 +6,7 @@ export const Catalog = {
     location: "online",
     startTime: "18:00",
     endTime: "21:00",
-    meetingDay: ["MO", "WE"],
+    meetingDays: ["MO", "WE"],
     startDate: "January 3, 2022 18:00",
     startEndTime: "January 3, 2022 21:00",
     endDate: "February 16, 2022",
