@@ -1,9 +1,73 @@
 body {
-  background-color:greenyellow;
+  margin: 0;
+  background: linear-gradient(-45deg, red, yellow, #32527b, green);
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#career {
+  border: 3px solid black;
+  padding: 1px;
+  margin: 10px;
+  background-color: khaki;
+  box-sizing: border-box;
+}
+
+#elective {
+  border: 3px solid black;
+  padding: 1px;
+  margin: 10px;
+  background-color: khaki;
+  box-sizing: border-box;
+}
+
+#langs {
+  border: 3px solid black;
+  padding: 1px;
+  margin: 10px;
+  background-color: khaki;
+  box-sizing: border-box;
 }
 
 h3 {
   font-size: 4mm;
   font-family: 'Times New Roman';
   margin-bottom: 1px;
+}
+
+#box1 {
+  border: 3px solid black;
+  padding: 3px;
+  margin: 15px;
+  background-color: lightblue;
+  box-sizing: border-box;
+  width: 50%;
+}
+
+#coursesList {
+  border: 3px solid black;
+  padding: 1px;
+  margin: 10px;
+  background-color: lightblue;
+  box-sizing: border-box;
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
 }

@@ -18,6 +18,11 @@ module.exports = {
       title: 'tech-course-calendar',
       template: './src/index.html',
       inject: 'body'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/confirmation.html',
+      filename: 'confirmation.html',
+      inject: 'body'
     })
   ],
   module: {
