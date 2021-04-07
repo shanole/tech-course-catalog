@@ -35,7 +35,7 @@ export function displayCourses() {
     let currentCourse = findCourse(coursesRetrieved[index]);
     let googleCalLink = makeEventLink(coursesRetrieved[index],"Google");
     let outlookCalLink = makeEventLink(coursesRetrieved[index], "Outlook");
-    htmlForCourseDisplay += `<div>
+    htmlForCourseDisplay += `<div class="courseDisplay">
     <h3>Course Name: ${currentCourse.courseTitle}</h3>
     <h3>Instructor: ${currentCourse.instructor}</h3>
     <h3>Dates: ${currentCourse.startDate.slice(0, -6)} to ${currentCourse.endDate}</h3>
