@@ -16,37 +16,38 @@
       <div id="career">
         <h2>Career</h2>
         <p>Pick the Career Path that fits you best, both paths are the same except for hours spent during the week. The Full Path is 40 hours per week, while the Part Time is about 20 hours a week.</p>
+        <img src='assets/images/programmer.jpg' alt="cartoon programmer" id="coder">
         <div class="radio">
           <label>
             <input type="radio" id="FTFS" name="career" value="Full-Time Full-Stack">
-              Full Time Full Stack
-          </label>
+              <b>Full Time Full Stack</b><span id="checkStyle"> <br>&emsp; Class Days: Mon, Tues, Wed, Thurs, and Fri.<br> &emsp; Class Times: 09:00 - 17:00<br></span>
+          </label><br>
           <label>
             <input type="radio" id="PTFS" name="career" value="Part-Time Full-Stack">
-              Part Time Full Stack
-          </label>
+              <b>Part Time Full Stack</b><span id="checkStyle"> <br>&emsp; Class Days: Sun, Mon, Tues, and Wed.<br> &emsp; Class Times: 17:00 - 21:00<br></span>
+          </label><br>
         </div>
       </div>
       <div id="elective">
         <h2>Elective</h2>
         <p>These are optional introduction-level courses, designed for individuals that are completely new to Programming in general and wish to learn some general (and helpful!) practices before committing to a career in this field.</p> 
         <div class="checkboxes">
-          <input type="checkbox" id="ITP" name="elective" value="Intro to Programming">Introduction To Programming<br>
-          <input type="checkbox" id="AADS" name="elective" value="Algorithms and Data Structures">Algorithms and Data Structures<br>
+          <input type="checkbox" id="ITP" name="elective" value="Intro to Programming"><b> Introduction To Programming</b><br><span id="checkStyle"> &emsp; Learn the basics of programming with instructor Lloyd Reid.<br>&emsp; Class Days: Mon and Wed.<br> &emsp; Class Times: 18:00 - 21:00<br></span>
+          <input type="checkbox" id="AADS" name="elective" value="Algorithms and Data Structures"><b> Algorithms and Data Structures</b><br><span id="checkStyle"> &emsp; Do you want to know more about computer science and the math that goes behind computer programming?<br>&emsp; Take this 6-week elective with Dr. Gulbadan, PhD.<br>&emsp; Class Days: Fri.<br> &emsp; Class Times: 15:00 - 17:00<br></span><br>
         </div>
       </div>
       <div id="langs">
         <h2>Languages</h2>
         <p>Here are all the available class we teach in our program. If you select the Full Path career you will be exposed to all of these languages and do not need to take the individual classes themselves. Where as Part Time can pick and choose those that appeal to them</p>
         <div class="checkboxes">
-          <input type="checkbox" id="C++" name="language" value="C++">C++<br>
-          <input type="checkbox" id="C#" name="language" value="C#">C#<br>
-          <input type="checkbox" id="Java" name="language" value="Java">Java<br>
-          <input type="checkbox" id="JS I" name="language" value="JavaScript I">JavaScript I<br>
-          <input type="checkbox" id="JS II" name="language" value="JavaScript II">JavaScript II<br>
-          <input type="checkbox" id="Python" name="language" value="Python">Python<br>
-          <input type="checkbox" id="React" name="language" value="React">React<br>
-          <input type="checkbox" id="Ruby" name="language" value="Ruby">Ruby<br>
+          <input type="checkbox" id="C++" name="language" value="C++"> <b>C++</b><span id="checkStyle"><br> &emsp; Learn how to program in C++ with expert Carmel Raymund.<br>&emsp; Class Days: Wed, and Fri.<br> &emsp; Class Times: 09:00 - 12:00<br></span>
+          <input type="checkbox" id="C#" name="language" value="C#"> <b>C#</b><span id="checkStyle"><br> &emsp; Learn how to program in C# with Stevo Abbatantuono.<br>&emsp; Class Days: Mon, Wed, and Fri.<br> &emsp; Class Times: 13:00 - 15:00<br></span>
+          <input type="checkbox" id="Java" name="language" value="Java"> <b>Java</b><span id="checkStyle"><br> &emsp; Learn how to program in Java with Abraham Hancock.<br>&emsp; Class Days: Mon, and Wed.<br> &emsp; Class Times: 13:00 - 16:00<br></span>
+          <input type="checkbox" id="JS I" name="language" value="JavaScript I"> <b>JavaScript I</b><span id="checkStyle"><br> &emsp; Learn the fundamentals of JavaScript with instructor Linford Adamo.<br>&emsp; Class Days: Mon, Wed, and Fri.<br> &emsp; Class Times: 10:00 - 12:00<br></span>
+          <input type="checkbox" id="JS II" name="language" value="JavaScript II"> <b>JavaScript II</b><span id="checkStyle"><br> &emsp; Learn intermediate JavaScript with Linford Adamo. <br> &emsp; <i>Students must take the JavaScript I course prior to registering for this course.</i><br>&emsp; Class Days: Mon, Wed, Fri.<br> &emsp; Class Times: <br></span>
+          <input type="checkbox" id="Python" name="language" value="Python"> <b>Python</b><span id="checkStyle"><br> &emsp; Learn how to work in Python in this course taught by Lloyd Reid.<br>&emsp; Class Days: Tue, and Fri.<br> &emsp; Class Times: 09:00 - 11:00<br></span>
+          <input type="checkbox" id="React" name="language" value="React"> <b>React</b><span id="checkStyle"><br> &emsp; Learn how to program in React with Abraham Hancock.<br>&emsp; Class Days: Tues, and Thurs.<br> &emsp; Class Times: 13:00 - 16:00<br></span>
+          <input type="checkbox" id="Ruby" name="language" value="Ruby"> <b>Ruby</b><span id="checkStyle"><br> &emsp; Learn how to program in Ruby with instructor Margrét Mitre Gardner<br>&emsp; Class Days: Mon, and Fri.<br> &emsp; Class Times: 09:00 - 12:00<br></span><br>
         </div>
       </div>
       <button type="button" class="btn-primary" id="submitcourse" onclick="window.location='confirmation.html';">Add Current Selected Courses To Enrollment Confirmation Page</button>
