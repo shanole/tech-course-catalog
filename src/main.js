@@ -3,6 +3,9 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import { findCourse, makeEventLink } from './js/calendar-event.js';
+import googleIcon from './assets/images/Google_Calendar_icon.png';
+import iCalIcon from './assets/images/iCal_icon.png';
+import outlookIcon from './assets/images/outlook_logo.png';
 
 function displayCourses() {
   const coursesRetrieved = localStorage.getItem("coursesPickedString").split(",");
@@ -22,9 +25,9 @@ function displayCourses() {
     <h3>Time: ${currentCourse.startTime} - ${currentCourse.endTime} </h3>
     <h3>Location: ${currentCourse.location}</h3>
     <p>${currentCourse.description}</p>
-    <button type="button" class="btn-primary" href="${googleCalLink}"><img src=assets/images/Google_Calendar_icon.png></button>
-    <button type="button" class="btn-danger" href="${outlookCalLink}"><img src=assets/images/outlook_logo.png></button>
-    <button type="button" class="btn-success" href="${iCalLink}"><img src=assets/images/iCal_icon.png></button>
+    <button type="button" class="btn-primary" href="${googleCalLink}"><img src=${googleIcon} id="img1"></button>
+    <button type="button" class="btn-danger" href="${outlookCalLink}"><img src=${outlookIcon} id="img1"></button>
+    <button type="button" class="btn-success" href="${iCalLink}"><img src=${iCalIcon} id="img1"></button>
     </div>`;
   });
   confirmationDiv.html(htmlForCourseDisplay);
