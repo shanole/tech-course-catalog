@@ -1,7 +1,7 @@
 import { GoogleCalendar, ICalendar, OutlookCalendar } from 'datebook';
 import { Catalog } from './course-catalog.js';
 
-function findCourse(title) {
+export function findCourse(title) {
   let selectedCourse;
   Catalog.courses.forEach(function(course) {
     if (course.courseTitle === title) {

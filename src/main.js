@@ -2,6 +2,33 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+import { findCourse, makeEventLink } from './js/calendar-event.js';
+
+function displayCourses() {
+  const coursesRetrieved = localStorage.getItem("coursesPickedString").split(",");
+  console.log("courses array from local storage: "+ coursesRetrieved);
+  let confirmationDiv = $("div#confirmationDisplay");
+  let htmlForCourseDisplay = "";
+  coursesRetrieved.forEach(function(course) {
+    let currentCourse = findCourse(course);
+    let googleCalLink = makeEventLink(course,"Google");
+    let iCalLink = makeEventLink(course,"iCalendar");
+    let outlookCalLink = makeEventLink(course, "Outlook");
+    htmlForCourseDisplay += `<div>
+    <h3>Course Name: ${currentCourse.courseTitle}</h3>
+    <h3>Instructor: ${currentCourse.instructor}</h3>
+    <h3>Dates: ${currentCourse.startDate} to ${currentCourse.endDate}</h3>
+    <h3>Days: ${currentCourse.meetingDay} </h3>
+    <h3>Time: ${currentCourse.startTime} - ${currentCourse.endTime} </h3>
+    <h3>Location: ${currentCourse.location}</h3>
+    <p>${currentCourse.description}</p>
+    <button type="button" class="btn-primary" href="${googleCalLink}"><img src=assets/images/Google_Calendar_icon.png></button>
+    <button type="button" class="btn-danger" href="${outlookCalLink}"><img src=assets/images/outlook_logo.png></button>
+    <button type="button" class="btn-success" href="${iCalLink}"><img src=assets/images/iCal_icon.png></button>
+    </div>`;
+  });
+  confirmationDiv.html(htmlForCourseDisplay);
+}
 
 $("#submitcourse").click(function(event) {
   event.preventDefault();
@@ -10,22 +37,23 @@ $("#submitcourse").click(function(event) {
 
   const name = $("input#name").val();
   localStorage.setItem("name", name);
-  let classesPicked = [$("input:radio[name=career]:checked").val()];
+  let coursesPicked = [$("input:radio[name=career]:checked").val()];
   $("input:checkbox[name=elective]:checked").each(function() {
     const electPick = $(this).val();
-    classesPicked.push(electPick);
+    coursesPicked.push(electPick);
   });
   $("input:checkbox[name=language]:checked").each(function() {
     const LangPick = $(this).val();
-    classesPicked.push(LangPick);
+    coursesPicked.push(LangPick);
   });
-  const classesPickedString = classesPicked.toString();
-  console.log(classesPickedString);
-  localStorage.setItem("classesPickedString", classesPickedString);
+  const coursesPickedString = coursesPicked.toString();
+  localStorage.setItem("coursesPickedString", coursesPickedString);
 });
-//code to be used when it's time to get data back out of local storage
-const classesRetrieved = localStorage.getItem("classesPickedString").split(",");
-const nameRetrieved = localStorage.getItem("name");
-console.log(localStorage.getItem(nameRetrieved));
-// console.log(localStorage.getItem("classesPickedString"));
-console.log(classesRetrieved);
+
+$(document).ready(function() {
+  if (window.location.pathname === '/confirmation.html') {
+    displayCourses();
+  }
+});
+
+// const nameRetrieved = localStorage.getItem("name");
