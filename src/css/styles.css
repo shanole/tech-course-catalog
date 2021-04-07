@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   background: linear-gradient(-45deg, red, yellow, #32527b, green);
   background-size: 400% 400%;
   animation: gradient 20s ease infinite;
@@ -16,6 +17,30 @@ body {
   }
 }
 
+#career {
+  border: 3px solid black;
+  padding: 1px;
+  margin: 10px;
+  background-color: khaki;
+  box-sizing: border-box;
+}
+
+#elective {
+  border: 3px solid black;
+  padding: 1px;
+  margin: 10px;
+  background-color: khaki;
+  box-sizing: border-box;
+}
+
+#langs {
+  border: 3px solid black;
+  padding: 1px;
+  margin: 10px;
+  background-color: khaki;
+  box-sizing: border-box;
+}
+
 h3 {
   font-size: 4mm;
   font-family: 'Times New Roman';
@@ -26,14 +51,23 @@ h3 {
   border: 3px solid black;
   padding: 3px;
   margin: 15px;
-  background-color: darkkhaki;
+  background-color: lightblue;
   box-sizing: border-box;
   width: 50%;
+}
+
+#coursesList {
+  border: 3px solid black;
+  padding: 1px;
+  margin: 10px;
+  background-color: lightblue;
+  box-sizing: border-box;
 }
 
 img {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
-  width: 100px;
+  width: 50px;
+  height: 50px;
 }

@@ -8,37 +8,45 @@
 <body>
   <div class="container">
     <h1>Greetings!</h1>
-    <h1>Welcome to Tech Course Calendar</h1>
+    <h4>Welcome to Tech Course! Here you can pick what classes you would like to enroll in, and grab links to directly export your classes into an online calendar of your choice.</h4>
     <form id="catalog">
       <div class="form-group">
         <label for="name">Enter your Name:</label>
         <input id="name" class="form-control" type="text">
-        <h3>Career</h3>
+      <div id="career">
+        <h2>Career</h2>
+        <p>Pick the Career Path that fits you best, both paths are the same except for hours spent during the week. The Full Path is 40 hours per week, while the Part Time is about 20 hours a week.</p>
         <div class="radio">
           <label>
-            <input type="radio" name="career" value="Full-Time Full-Stack">
+            <input type="radio" id="FTFS" name="career" value="Full-Time Full-Stack">
               Full Time Full Stack
           </label>
           <label>
-            <input type="radio" name="career" value="Part-Time Full-Stack">
+            <input type="radio" id="PTFS" name="career" value="Part-Time Full-Stack">
               Part Time Full Stack
           </label>
         </div>
-        <h3>Elective</h3>
+      </div>
+      <div id="elective">
+        <h2>Elective</h2>
+        <p>These are optional introduction-level courses, designed for individuals that are completely new to Programming in general and wish to learn some general (and helpful!) practices before committing to a career in this field.</p> 
         <div class="checkboxes">
-          <input type="checkbox" name="elective" value="Intro to Programming">Introduction To Programming<br>
-          <input type="checkbox" name="elective" value="Algorithms and Data Structures">Algorithms and Data Structures<br>
+          <input type="checkbox" id="ITP" name="elective" value="Intro to Programming">Introduction To Programming<br>
+          <input type="checkbox" id="AADS" name="elective" value="Algorithms and Data Structures">Algorithms and Data Structures<br>
         </div>
-        <h3>Languages</h3>
+      </div>
+      <div id="langs">
+        <h2>Languages</h2>
+        <p>Here are all the available class we teach in our program. If you select the Full Path career you will be exposed to all of these languages and do not need to take the individual classes themselves. Where as Part Time can pick and choose those that appeal to them</p>
         <div class="checkboxes">
-          <input type="checkbox" name="language" value="C++">C+<br>
-          <input type="checkbox" name="language" value="C#">C#<br>
-          <input type="checkbox" name="language" value="Java">Java<br>
-          <input type="checkbox" name="language" value="JavaScript I">JavaScript I<br>
-          <input type="checkbox" name="language" value="JavaScript II">JavaScript II<br>
-          <input type="checkbox" name="language" value="Python">Python<br>
-          <input type="checkbox" name="language" value="React">React<br>
-          <input type="checkbox" name="language" value="Ruby">Ruby<br>
+          <input type="checkbox" id="C++" name="language" value="C++">C++<br>
+          <input type="checkbox" id="C#" name="language" value="C#">C#<br>
+          <input type="checkbox" id="Java" name="language" value="Java">Java<br>
+          <input type="checkbox" id="JS I" name="language" value="JavaScript I">JavaScript I<br>
+          <input type="checkbox" id="JS II" name="language" value="JavaScript II">JavaScript II<br>
+          <input type="checkbox" id="Python" name="language" value="Python">Python<br>
+          <input type="checkbox" id="React" name="language" value="React">React<br>
+          <input type="checkbox" id="Ruby" name="language" value="Ruby">Ruby<br>
         </div>
       </div>
       <button type="button" class="btn-primary" id="submitcourse" onclick="window.location='confirmation.html';">Add Current Selected Courses To Enrollment Confirmation Page</button>
