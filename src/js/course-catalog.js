@@ -16,7 +16,7 @@ export const Catalog = {
   {
     courseTitle: "Full-Time Full-Stack",
     instructor: "Vladimir Benton",
-    description: "Ready to change your career? Learn all about back-end to front-end programming in a 40 hour-a-week program with esteemed instructor Vladimir Bent",
+    description: "Ready to change your career? Learn all about back-end to front-end programming in a 40 hour-a-week program with esteemed instructor Vladimir Benton.",
     location: "1945 SE Water Ave, Portland, OR 97214",
     startTime: "09:00",
     endTime: "17:00",
