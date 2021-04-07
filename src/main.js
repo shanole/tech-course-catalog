@@ -4,6 +4,32 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import { findCourse, makeEventLink } from './js/calendar-event.js';
 
+function displayCourses() {
+  const coursesRetrieved = localStorage.getItem("coursesPickedString").split(",");
+  console.log("courses array from local storage: "+ coursesRetrieved);
+  let confirmationDiv = $("div#confirmationDisplay");
+  let htmlForCourseDisplay = "";
+  coursesRetrieved.forEach(function(course) {
+    let currentCourse = findCourse(course);
+    let googleCalLink = makeEventLink(course,"Google");
+    let iCalLink = makeEventLink(course,"iCalendar");
+    let outlookCalLink = makeEventLink(course, "Outlook");
+    htmlForCourseDisplay += `<div>
+    <h3>Course Name: ${currentCourse.courseTitle}</h3>
+    <h3>Instructor: ${currentCourse.instructor}</h3>
+    <h3>Dates: ${currentCourse.startDate} to ${currentCourse.endDate}</h3>
+    <h3>Days: ${currentCourse.meetingDay} </h3>
+    <h3>Time: ${currentCourse.startTime} - ${currentCourse.endTime} </h3>
+    <h3>Location: ${currentCourse.location}</h3>
+    <p>${currentCourse.description}</p>
+    <button type="button" class="btn-primary" href="${googleCalLink}"><img src=assets/images/Google_Calendar_icon.png></button>
+    <button type="button" class="btn-danger" href="${outlookCalLink}"><img src=assets/images/outlook_logo.png></button>
+    <button type="button" class="btn-success" href="${iCalLink}"><img src=assets/images/iCal_icon.png></button>
+    </div>`;
+  });
+  confirmationDiv.html(htmlForCourseDisplay);
+}
+
 $("#submitcourse").click(function(event) {
   event.preventDefault();
   $("#catalog").hide();
@@ -24,28 +50,10 @@ $("#submitcourse").click(function(event) {
   localStorage.setItem("coursesPickedString", coursesPickedString);
 });
 
-// const nameRetrieved = localStorage.getItem("name");
+$(document).ready(function() {
+  if (window.location.pathname === '/confirmation.html') {
+    displayCourses();
+  }
+});
 
-function displayCourses() {
-  const coursesRetrieved = localStorage.getItem("coursesPickedString").split(",");
-  let htmlForCourseDisplay = "";
-  coursesRetrieved.forEach(function(course) {
-    // Create html to display details of each selected course in a box
-    // Generate links
-    let currentCourse = findCourse(course);
-    let googleCalLink = makeEventLink(currentCourse,"Google");
-    let iCalLink = makeEventLink(currentCourse,"iCalendar");
-    let outlookCalLink = makeEventLink(currentCourse,"Outlook");
-    htmlForCourseDisplay += `<h3>Course Name: ${currentCourse.courseTitle}</h3>
-    <h3>Instructor: ${currentCourse.instructor}</h3>
-    <h3>Dates: ${currentCourse.startDate} to ${currentCourse.endDate}</h3>
-    <h3>Days: ${currentCourse.meetingDay} </h3>
-    <h3>Time: ${currentCourse.startTime} - ${currentCourse.endTime} </h3>
-    <h3>Location: ${currentCourse.location}</h3>
-    <p>${currentCourse.description}</p>
-    <button type="button" class="btn-primary" href="${googleCalLink}">Google</button>
-    <button type="button" class="btn-danger" href="${outlookCalLink}">Outlook</button>
-    <button type="button" class="btn-success" href="${iCalLink}">iCal</button>`;
-  })
-  //inject HTML into div in confirmation.html
-}
+// const nameRetrieved = localStorage.getItem("name");
