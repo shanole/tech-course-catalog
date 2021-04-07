@@ -3,6 +3,32 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import { findCourse, makeEventLink } from './js/calendar-event.js';
+import googleIcon from './assets/images/Google_Calendar_icon.png';
+import iCalIcon from './assets/images/iCal_icon.png';
+import outlookIcon from './assets/images/outlook_logo.png';
+
+function prettifyDays(dayArray) {
+  let prettifiedDaysArray = [];
+  dayArray.forEach(function(day) {
+    if (day === "MO") {
+      prettifiedDaysArray.push("Monday");
+    } else if (day === "TU") {
+      prettifiedDaysArray.push("Tuesday");
+    } else if (day === "WE") {
+      prettifiedDaysArray.push("Wednesday");
+    } else if (day === "TH") {
+      prettifiedDaysArray.push("Thursday");
+    } else if (day === "FR") {
+      prettifiedDaysArray.push("Friday");
+    } else if (day === "SA") {
+      prettifiedDaysArray.push("Saturday");
+    } else {
+      prettifiedDaysArray.push("Sunday");
+    }
+  });
+  const Days = prettifiedDaysArray.join(", ");
+  return Days;
+}
 
 function displayCourses() {
   const coursesRetrieved = localStorage.getItem("coursesPickedString").split(",");
@@ -15,14 +41,14 @@ function displayCourses() {
     htmlForCourseDisplay += `<div>
     <h3>Course Name: ${currentCourse.courseTitle}</h3>
     <h3>Instructor: ${currentCourse.instructor}</h3>
-    <h3>Dates: ${currentCourse.startDate} to ${currentCourse.endDate}</h3>
-    <h3>Days: ${currentCourse.meetingDay}</h3>
+    <h3>Dates: ${currentCourse.startDate.slice(0, -6)} to ${currentCourse.endDate}</h3>
+    <h3>Days: ${prettifyDays(currentCourse.meetingDays)}</h3>
     <h3>Time: ${currentCourse.startTime} - ${currentCourse.endTime}</h3>
     <h3>Location: ${currentCourse.location}</h3>
     <p>${currentCourse.description}</p>
-    <button type="button" class="btn-primary" onclick="window.open('${googleCalLink}', '_blank')"><img src=assets/images/Google_Calendar_icon.png></button>
-    <button type="button" class="btn-danger" onclick="window.open('${outlookCalLink}', '_blank')"><img src=assets/images/outlook_logo.png></button>
-    <button type="button" class="btn-success" class="iCal" id="${index}" "><img src=assets/images/iCal_icon.png></button>
+    <button type="button" class="btn-primary" onclick="window.open('${googleCalLink}', '_blank')"><img src="${googleIcon}"></button>
+    <button type="button" class="btn-danger" onclick="window.open('${outlookCalLink}', '_blank')"><img src="${outlookIcon}"></button>
+    <button type="button" class="btn-success" class="iCal" id="${index}"><img src="${iCalIcon}"></button>
     </div>`;
   }
   confirmationDiv.html(htmlForCourseDisplay);
@@ -63,10 +89,14 @@ $("#submitcourse").click(function(event) {
 });
 
 $(document).ready(function() {
+  $('#userName').text(localStorage.getItem("name"));
   if (window.location.pathname === '/confirmation.html') {
     displayCourses();
   }
   iCalButtons();
-});
 
-// const nameRetrieved = localStorage.getItem("name")
+  $('button#go-back').on('click', function(event) {
+    event.preventDefault();
+    window.history.back();
+  });
+});
