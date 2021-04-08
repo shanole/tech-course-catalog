@@ -21,7 +21,7 @@ body {
   border: 3px solid black;
   padding: 1px;
   margin: 10px;
-  background-color: khaki;
+  background-color: rgb(175, 235, 175);
   box-sizing: border-box;
 }
 
@@ -29,7 +29,7 @@ body {
   border: 3px solid black;
   padding: 1px;
   margin: 10px;
-  background-color: khaki;
+  background-color: rgb(165, 235, 165);
   box-sizing: border-box;
 }
 
@@ -37,7 +37,7 @@ body {
   border: 3px solid black;
   padding: 1px;
   margin: 10px;
-  background-color: khaki;
+  background-color: rgb(155, 235, 155);
   box-sizing: border-box;
 }
 
@@ -85,5 +85,8 @@ img {
 }
 
 .courseDisplay {
-  margin-bottom: 15px;
+  border: 2px solid rgb(9, 9, 97);
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
 }
