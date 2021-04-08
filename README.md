@@ -18,7 +18,7 @@
 
 ## Preview <a id="preview"></a>
 
-* _Direct your browser to a [live version](jessicarubinwilliams.github.io/tech-course-calendar/index.html) on GitHub Pages._
+* _Direct your browser to a [live version](https://jessicarubinwilliams.github.io/tech-course-calendar/index.html) on GitHub Pages._
 
 ## Technologies Used <a id="technologies"></a>
 
