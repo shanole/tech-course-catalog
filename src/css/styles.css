@@ -1,11 +1,12 @@
 body {
   margin: 0;
-  background: linear-gradient(-45deg, red, yellow, #32527b, green);
+  /* background: linear-gradient(-45deg, red, yellow, #32527b, green); */
   background-size: 400% 400%;
-  animation: gradient 20s ease infinite;
+  /* animation: gradient 20s ease infinite; */
+  font-family: sans-serif;
 }
 
-@keyframes gradient {
+/* @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
@@ -15,29 +16,29 @@ body {
   100% {
     background-position: 0% 50%;
   }
-}
+} */
 
 #career {
   border: 3px solid black;
-  padding: 1px;
+  padding: 10px;
   margin: 10px;
-  background-color: rgb(175, 235, 175);
+  /* background-color: rgb(175, 235, 175); */
   box-sizing: border-box;
 }
 
 #elective {
   border: 3px solid black;
-  padding: 1px;
+  padding: 10px;
   margin: 10px;
-  background-color: rgb(165, 235, 165);
+  /* background-color: rgb(165, 235, 165); */
   box-sizing: border-box;
 }
 
 #langs {
   border: 3px solid black;
-  padding: 1px;
+  padding: 10px;
   margin: 10px;
-  background-color: rgb(155, 235, 155);
+  /* background-color: rgb(155, 235, 155); */
   box-sizing: border-box;
 }
 
@@ -48,19 +49,19 @@ h3 {
 }
 
 #confirmationDisplay {
-  border: 3px solid black;
-  padding: 3px;
+  /* border: 3px solid black; */
+  padding: 10px;
   margin: 15px;
-  background-color: lightblue;
+  /* background-color: lightblue; */
   box-sizing: border-box;
   width: 50%;
 }
 
 #coursesList {
   border: 3px solid black;
-  padding: 1px;
+  padding: 10px;
   margin: 10px;
-  background-color: lightblue;
+  /* background-color: lightblue; */
   box-sizing: border-box;
 }
 
@@ -88,5 +89,5 @@ img {
   border: 2px solid rgb(9, 9, 97);
   border-radius: 5px;
   padding: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
 }
